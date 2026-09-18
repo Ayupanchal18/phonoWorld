@@ -11,9 +11,13 @@
     "dev": "npm run dev --workspaces --if-present",
     "dev:api": "npm run dev --workspace=apps/api",
     "dev:web": "npm run dev --workspace=apps/web",
-    "build": "npm run build --workspaces --if-present",
+    "build": "npm run build --workspace=apps/web",
+    "start": "node apps/api/src/server.js",
     "seed": "npm run seed --workspace=apps/api",
     "test": "npm run test --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   },
   "keywords": [
     "phonoworld",
@@ -25,3 +29,4 @@
   "author": "PhonoWorld Engineering",
   "license": "ISC"
 }
+

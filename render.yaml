@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: phonoworld
+    runtime: node
+    plan: free
+    region: singapore # Closest region to India for optimal latency
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: CORS_ORIGIN
+        value: '*'
+      - key: JWT_SECRET
+        generateValue: true
+      - key: AMAZON_ASSOCIATE_TAG
+        value: phonoworld-21
+      - key: AMAZON_HOST
+        value: webservices.amazon.in
+      - key: AMAZON_REGION
+        value: eu-west-1
